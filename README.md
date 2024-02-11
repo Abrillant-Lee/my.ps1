@@ -18,9 +18,9 @@
 
 - [cst](./cst.ps1)：`create stm32 template`
 
-  - 脚本功能：创建stm32模板，包含stm32F103VET6、STM32F103C8T6、STM32F407ZGT6的HAL库、标准库模板。
+  - 脚本功能：快速创建stm32模板，包含stm32F103VET6、STM32F103C8T6、STM32F407ZGT6的HAL库、标准库模板。
 
-  - 脚本使用：进入`powershell`，输入`cst *f4*`
+  - 脚本使用：进入`powershell`，输入`cst f4hal`/`cst led-f4hal`/`cst f4hal-led`,只要参数包含`f4`即可创建`STM32F407ZGT6`的hal库模板，其余模板类似。
 
   - 脚本说明：
   ```ps1
@@ -64,6 +64,25 @@
 
 ### 3、打开文件夹
 
-- [halcode](./halcode.ps1)
+- [halcode](./halcode.ps1) 
+  - 脚本功能：`haldir`脚本的进阶版，多加了一个参数，即可以使用code打开参数文件夹。
+  - 脚本说明：
+  ```ps1
+  # 进入hal库工程目录
+  cd C:\Users\nan\nan\project\Stm32code\HAL
+
+  # 设置基础目录的路径
+  $baseDir = 'C:\Users\nan\nan\project\Stm32code\HAL'
+
+  # 使用 Join-Path 命令将基础目录和参数中的子目录路径连接起来
+  $dirPath = Join-Path -Path $baseDir -ChildPath $args[0]
+
+  # 使用 Set-Location 命令将当前位置（即当前活动目录）更改为基础目录
+  Set-Location -Path $baseDir
+
+  # 使用 code 命令打开 Visual Studio Code，并将其设置为新连接的目录路径
+  code $dirPath
+  ```
+  
 
 
