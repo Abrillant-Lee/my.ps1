@@ -1,4 +1,4 @@
-## <center>🚀我的Powershell脚本🚀</center>
+ <center><font size=6 >🚀我的Powershell脚本🚀</font></center>
 
 ### 1、更改路径
 - [dkdir](./dkdir.ps1)
@@ -65,7 +65,9 @@
 ### 3、打开文件夹
 
 - [halcode](./halcode.ps1) 
+
   - 脚本功能：`haldir`脚本的进阶版，多加了一个参数，即可以使用code打开参数文件夹。
+
   - 脚本说明：
   ```ps1
   # 进入hal库工程目录
